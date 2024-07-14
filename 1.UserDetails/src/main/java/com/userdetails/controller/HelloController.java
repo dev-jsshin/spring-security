@@ -8,7 +8,7 @@ public class HelloController {
 
     /*
      * http://localhost:8080/hello
-     * john/12345 (base64)
+     * john:12345 (base64)
      */
     @GetMapping("/hello")
     public String hello() {
