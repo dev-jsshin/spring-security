@@ -58,6 +58,14 @@ public class SecurityConfig {
 //        http.authorizeHttpRequests((authz) -> authz.anyRequest().hasAnyRole("ADMIN", "MANAGER"))
 //            .httpBasic(withDefaults());
 
+        /*
+         * 아래와 같이 23:30 이후에만 접근 허용할 수 있는 특수한 규칙도 적용 가능하다.
+         * SpEL 식을 사용해야하며 구문이 복잡해서 사용 빈도수가 적어보이긴하다. (알아두면 유용할듯)
+         * ROLE 규칙에만 중점을 둘 필요는 없을듯
+         */
+//        http.authorizeRequests()
+//            .anyRequest().access("T(java.time.LocalTime).now().isAfter(T(java.time.LocalTime).of(23, 30))");
+
         return http.build();
     }
 }
