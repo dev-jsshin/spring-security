@@ -1,1 +1,1 @@
-spring-security sequential learning
+sequential learning
