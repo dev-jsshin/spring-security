@@ -52,7 +52,7 @@ public class SecurityConfig {
     }
 
     /*
-     * WebSecurityConfigureAdaoter Deprecated 이슈
+     * WebSecurityConfigureAdapter Deprecated 이슈
      * configure 방식에서 SecurityFilterChain 방식 사용
      * 아래 방식으로 성공, 실패 핸들러 객체를 등록할 수 있다.
      */

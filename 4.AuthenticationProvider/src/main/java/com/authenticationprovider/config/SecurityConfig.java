@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 public class SecurityConfig {
 
     /*
-     * WebSecurityConfigureAdaoter Deprecated 이슈
+     * WebSecurityConfigureAdapter Deprecated 이슈
      * 직접 빈 생성을 통해 대응한다.
      */
     @Bean

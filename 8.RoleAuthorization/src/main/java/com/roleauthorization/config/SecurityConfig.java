@@ -46,7 +46,7 @@ public class SecurityConfig {
     }
 
     /*
-     * WebSecurityConfigureAdaoter Deprecated 이슈
+     * WebSecurityConfigureAdapter Deprecated 이슈
      * configure 방식에서 SecurityFilterChain 방식 사용
      */
     @Bean
