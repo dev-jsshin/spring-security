@@ -1,1 +1,1 @@
-sequential learning
+Sequential Spring Security
