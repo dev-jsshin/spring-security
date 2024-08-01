@@ -4,3 +4,7 @@ spring:
     username: user
     password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp

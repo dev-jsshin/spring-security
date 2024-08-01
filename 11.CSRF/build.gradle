@@ -24,9 +24,9 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
     runtimeOnly 'com.mysql:mysql-connector-j'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
 }
 
 tasks.named('test') {
