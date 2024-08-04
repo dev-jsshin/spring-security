@@ -8,10 +8,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 /*
- * 본 어플리케이션은 MSA 관점에서 바라보는 인증 서버가 아니다.
  * AuthServer 라고 명시되어 있는 본 어플리케이션의 비즈니스는
- * 사용자 추가 / OTP 인증번호 발급 / 간단한 OTP 인증번호 일치 여부 확인용이다.
- * [Only 어플리케이션 분리에 중점을 둔다]
+ * 사용자 추가 / OTP 인증번호 발급 / 간단한 OTP 인증번호 일치 여부 (최종 접근 권한 허용) 확인용이다.
  */
 @Configuration
 public class SecurityConfig {
