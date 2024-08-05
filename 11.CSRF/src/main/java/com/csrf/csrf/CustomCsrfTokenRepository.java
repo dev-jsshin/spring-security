@@ -2,6 +2,7 @@ package com.csrf.csrf;
 
 import com.csrf.entity.Token;
 import com.csrf.repository.JpaTokenRepository;
+import com.csrf.service.TokenService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class CustomCsrfTokenRepository implements CsrfTokenRepository {
 
     @Autowired
     private JpaTokenRepository jpaTokenRepository;
+
+    @Autowired
+    private TokenService tokenService;
 
     @Override
     public CsrfToken generateToken(HttpServletRequest httpServletRequest) {
@@ -40,23 +44,7 @@ public class CustomCsrfTokenRepository implements CsrfTokenRepository {
             identifier = "john";
         }
 
-        Optional<Token> existingToken = jpaTokenRepository.findTokenByIdentifier(identifier);
-
-        if (existingToken.isPresent()) {
-
-//            System.out.println("DB Token ==> " + existingToken.get().getToken());
-//            System.out.println("csrfToken.getToken() ==> " + csrfToken.getToken());
-
-            // UPDATE 로직 필요
-            Token token = existingToken.get();
-            token.setToken(csrfToken.getToken());
-        } else {
-            Token token = new Token();
-            token.setToken(csrfToken.getToken());
-            token.setIdentifier(identifier);
-            jpaTokenRepository.save(token);
-        }
-
+        tokenService.saveToken(identifier, csrfToken.getToken());
     }
 
     @Override
