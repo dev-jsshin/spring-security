@@ -39,7 +39,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
-        var converter = new JwtAccessTokenConverter();
+        var converter = new AdditionalClaimsAccessTokenConverter(); // 새로운 AccessTokenConverter 객체의 인스턴스 생성
         converter.setSigningKey(jwtKey);
         return converter;
     }
