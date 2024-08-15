@@ -9,9 +9,12 @@ import org.springframework.security.oauth2.config.annotation.configurers.ClientD
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+
+import java.util.List;
 
 @Configuration
 @EnableAuthorizationServer
@@ -23,7 +26,10 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
     @Value("${jwt.key}")
     private String jwtKey;
 
-    // http://localhost:8080/oauth/authorize?response_type=code&client_id=client&scope=read
+    /*
+     * http://localhost:8080/oauth/authorize?response_type=code&client_id=client&scope=read
+     * In-Memory 방식으로 클라이언트 등록
+     */
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
@@ -33,12 +39,22 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
                 .scopes("read");
     }
 
+    /*
+     * 본 어플리케이션은 JWT 토큰 방식을 사용할 것이며 tokenEnhancer를 통해 토큰에 세부 정보를 추가한다.
+     */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
-        endpoints
-                .authenticationManager(authenticationManager)
-                .tokenStore(tokenStore())
-                .accessTokenConverter(jwtAccessTokenConverter());
+
+        TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
+
+        var tokenEnhancers = List.of(new CustomTokenEnhancer(),
+                             jwtAccessTokenConverter());
+
+        tokenEnhancerChain.setTokenEnhancers(tokenEnhancers);
+
+        endpoints.authenticationManager(authenticationManager)
+                 .tokenStore(tokenStore())
+                 .tokenEnhancer(tokenEnhancerChain);
     }
 
     @Bean
