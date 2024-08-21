@@ -1,6 +1,6 @@
-package com.prepostauthorize.config;
+package com.prepostfilter.config;
 
-import com.prepostauthorize.evaluator.DocumentsPermissionEvaluator;
+import com.prepostfilter.evaluator.DocumentsPermissionEvaluator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

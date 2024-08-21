@@ -1,7 +1,7 @@
-package com.prepostauthorize.service;
+package com.prepostfilter.service;
 
-import com.prepostauthorize.model.Document;
-import com.prepostauthorize.repository.DocumentRepository;
+import com.prepostfilter.model.Document;
+import com.prepostfilter.repository.DocumentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /*
- * Pre Authorize (사전 권한부여)
+ * Pre Filter (사전 필터)
  * 특정 조건에 의해서 비즈니스 로직을 경유하면 안될 때 사용
  */
 @Service

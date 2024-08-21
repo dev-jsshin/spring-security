@@ -1,6 +1,6 @@
-package com.prepostauthorize.repository;
+package com.prepostfilter.repository;
 
-import com.prepostauthorize.model.Document;
+import com.prepostfilter.model.Document;
 import org.springframework.stereotype.Repository;
 import java.util.Map;
 

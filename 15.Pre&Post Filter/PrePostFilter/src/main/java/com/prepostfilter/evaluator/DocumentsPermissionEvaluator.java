@@ -1,7 +1,7 @@
-package com.prepostauthorize.evaluator;
+package com.prepostfilter.evaluator;
 
-import com.prepostauthorize.model.Document;
-import com.prepostauthorize.repository.DocumentRepository;
+import com.prepostfilter.model.Document;
+import com.prepostfilter.repository.DocumentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.PermissionEvaluator;
 import org.springframework.security.core.Authentication;

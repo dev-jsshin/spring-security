@@ -1,13 +1,13 @@
-package com.prepostauthorize;
+package com.prepostfilter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PrePostAuthorizeApplication {
+public class PrePostFilterApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PrePostAuthorizeApplication.class, args);
+        SpringApplication.run(PrePostFilterApplication.class, args);
     }
 
 }

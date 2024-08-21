@@ -1,8 +1,8 @@
-package com.prepostauthorize.controller;
+package com.prepostfilter.controller;
 
-import com.prepostauthorize.model.Document;
-import com.prepostauthorize.model.Employee;
-import com.prepostauthorize.service.PostService;
+import com.prepostfilter.model.Document;
+import com.prepostfilter.model.Employee;
+import com.prepostfilter.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

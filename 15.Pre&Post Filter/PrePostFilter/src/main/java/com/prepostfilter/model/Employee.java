@@ -1,4 +1,4 @@
-package com.prepostauthorize.model;
+package com.prepostfilter.model;
 
 import java.util.List;
 import java.util.Objects;
