@@ -1,8 +1,8 @@
-package com.prepostfilter.service;
+package com.prepostauthorize.service;
 
-import com.prepostfilter.model.Document;
-import com.prepostfilter.model.Employee;
-import com.prepostfilter.repository.DocumentRepository;
+import com.prepostauthorize.model.Document;
+import com.prepostauthorize.model.Employee;
+import com.prepostauthorize.repository.DocumentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 /*
- * Post Filter (사후 필터)
+ * Post Authorize (사후 권한부여)
  * 비즈니스 로직을 경유한 후 특정 조건에 의해 Return 가능 여부 체크
  * ex) DB에서 데이터를 가지고 온 후 체크
  */

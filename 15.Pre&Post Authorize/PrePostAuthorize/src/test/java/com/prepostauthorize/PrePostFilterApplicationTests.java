@@ -1,4 +1,4 @@
-package com.prepostfilter;
+package com.prepostauthorize;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
